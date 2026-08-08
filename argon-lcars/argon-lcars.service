@@ -1,0 +1,15 @@
+[Unit]
+Description=Argon POD LCARS Display
+After=network-online.target argonpodd.service pihole-FTL.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/argon-lcars
+ExecStart=/usr/bin/python3 /opt/argon-lcars/main.py
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

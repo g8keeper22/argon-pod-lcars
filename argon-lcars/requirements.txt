@@ -1,0 +1,6 @@
+pygame
+psutil
+requests
+RPi.GPIO
+evdev
+numpy
